@@ -66,6 +66,25 @@ function generatePassword() {
   getPasswordOptions()
   
   let password = "";
+
+  while (password.length <= characters) {
+    
+    if (specialchar == true) {
+      password += getRandom(specialCharacters);
+    }
+    if (numericchar == true) {
+      password += getRandom(numericCharacters);
+    }
+    if (lowercasechar == true) {
+      password += getRandom(lowerCasedCharacters);
+    }
+    if (uppercasechar == true) {
+      password += getRandom(upperCasedCharacters);
+    }
+  }
+
+  return password
+
 }
 
 // Get references to the #generate element
