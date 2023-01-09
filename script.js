@@ -1,8 +1,8 @@
 // Array of special characters to be included in password
 var specialCharacters = [
-  '@', '%', '+', '.', '/', "'", '!', '#',
+  '@', '%', '+', '\\', '/', "'", '!', '#',
   '$', '^', '?', ':', ',', ')', '(', '}',
-  '{', ']', '[', '~', '-', '_', '\\'
+  '{', ']', '[', '~', '-', '_', '.'
 ];
 
 // Array of numeric characters to be included in password
@@ -22,9 +22,14 @@ var upperCasedCharacters = [
   'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
 ];
 
+var characters
+var specialchar
+var numericchar 
+var lowercasechar 
+var uppercasechar 
+
 // Function to prompt user for password options
-function getPasswordOptions() {
-  var characters 
+function getPasswordOptions() { 
   
   while (true) {
     characters = prompt("How many characters do you want for your password??");
@@ -35,10 +40,6 @@ function getPasswordOptions() {
     alert ("Your password needs to be at least 10 characters but no more than 64. Please try again."); 
   }
 
-  var specialchar
-  var numericchar 
-  var lowercasechar 
-  var uppercasechar 
 
   while (true) {
     specialchar = confirm("Click OK if you would like special characters in your password, otherwise press cancel.");
@@ -57,13 +58,13 @@ function getPasswordOptions() {
 // Function for getting a random element from an array
 function getRandom(arr) {
   const element = arr[Math.floor(Math.random() * arr.length)];
-
   return element; 
 }
 
 // Function to generate password with user input
 function generatePassword() {
-  getPasswordOptions() 
+  getPasswordOptions()
+
 }
 
 // Get references to the #generate element
