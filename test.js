@@ -1,1 +1,0 @@
-const userInput = prompt ("E")

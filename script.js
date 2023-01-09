@@ -64,7 +64,8 @@ function getRandom(arr) {
 // Function to generate password with user input
 function generatePassword() {
   getPasswordOptions()
-
+  
+  let password = "";
 }
 
 // Get references to the #generate element
