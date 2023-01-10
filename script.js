@@ -22,6 +22,7 @@ var upperCasedCharacters = [
   'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
 ];
 
+// Globally scoped the variables so they can be used in multiple functions.
 var characters
 var lowercasechar
 var uppercasechar
@@ -34,9 +35,11 @@ function getPasswordOptions() {
   while (true) {
     characters = prompt("How many characters do you want for your password??");
 
+    // Creates a condition to ensure the number entered by the user fits within the specified range.
     if (characters >= 10 && characters <= 64) {
       break
     }
+    // Alerts the user that the number they have entered isn't within the specified range.
     alert("Your password needs to be at least 10 characters but no more than 64. Please try again.");
   }
 
@@ -47,12 +50,13 @@ function getPasswordOptions() {
     numericchar = confirm("Click OK if you would like numeric characters in your password, otherwise press cancel.");
     specialchar = confirm("Click OK if you would like special characters in your password, otherwise press cancel.");
 
+    // Creates a condition for each input so that at least one character type is selected.
     if (lowercasechar == true || uppercasechar == true || numericchar == true || specialchar == true) {
       break
     }
+    // Alerts the user that they haven't selected a character type.
     alert("A minimum of one character type has to be selected. Please try again.")
   }
-
 }
 
 // Function for getting a random element from an array
@@ -88,7 +92,6 @@ function generatePassword() {
   }
 
   return password
-
 }
 
 // Get references to the #generate element
