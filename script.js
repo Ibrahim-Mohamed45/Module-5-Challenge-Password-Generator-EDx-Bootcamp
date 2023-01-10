@@ -23,10 +23,10 @@ var upperCasedCharacters = [
 ];
 
 var characters
-var specialchar
-var numericchar 
 var lowercasechar 
-var uppercasechar 
+var uppercasechar
+var numericchar  
+var specialchar
 
 // Function to prompt user for password options
 function getPasswordOptions() { 
@@ -42,12 +42,12 @@ function getPasswordOptions() {
 
 
   while (true) {
-    specialchar = confirm("Click OK if you would like special characters in your password, otherwise press cancel.");
-    numericchar = confirm("Click OK if you would like numeric characters in your password, otherwise press cancel.");
     lowercasechar = confirm("Click OK if you would like lowercase characters in your password, otherwise press cancel.");
     uppercasechar = confirm("Click OK if you would like uppercase characters in your password, otherwise press cancel.");
+    numericchar = confirm("Click OK if you would like numeric characters in your password, otherwise press cancel.");
+    specialchar = confirm("Click OK if you would like special characters in your password, otherwise press cancel.");
 
-    if (specialchar == true || numericchar == true || lowercasechar == true || uppercasechar == true) {
+    if (lowercasechar == true || uppercasechar == true || numericchar == true || specialchar == true) {
       break
     }
     alert ("A minimum of one character type has to be selected. Please try again.")
@@ -69,18 +69,22 @@ function generatePassword() {
 
   while (password.length <= characters) {
     
-    if (specialchar == true) {
-      password += getRandom(specialCharacters);
-    }
-    if (numericchar == true) {
-      password += getRandom(numericCharacters);
-    }
     if (lowercasechar == true) {
       password += getRandom(lowerCasedCharacters);
     }
     if (uppercasechar == true) {
       password += getRandom(upperCasedCharacters);
     }
+    if (numericchar == true) {
+      password += getRandom(numericCharacters);
+    }
+    if (specialchar == true) {
+      password += getRandom(specialCharacters);
+    }
+  }
+
+  if (password.length > characters) {
+    password = password.slice(0, characters);
   }
 
   return password
