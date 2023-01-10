@@ -23,21 +23,21 @@ var upperCasedCharacters = [
 ];
 
 var characters
-var lowercasechar 
+var lowercasechar
 var uppercasechar
-var numericchar  
+var numericchar
 var specialchar
 
 // Function to prompt user for password options
-function getPasswordOptions() { 
-  
+function getPasswordOptions() {
+
   while (true) {
     characters = prompt("How many characters do you want for your password??");
-    
+
     if (characters >= 10 && characters <= 64) {
       break
     }
-    alert ("Your password needs to be at least 10 characters but no more than 64. Please try again."); 
+    alert("Your password needs to be at least 10 characters but no more than 64. Please try again.");
   }
 
 
@@ -50,7 +50,7 @@ function getPasswordOptions() {
     if (lowercasechar == true || uppercasechar == true || numericchar == true || specialchar == true) {
       break
     }
-    alert ("A minimum of one character type has to be selected. Please try again.")
+    alert("A minimum of one character type has to be selected. Please try again.")
   }
 
 }
@@ -58,17 +58,17 @@ function getPasswordOptions() {
 // Function for getting a random element from an array
 function getRandom(arr) {
   const element = arr[Math.floor(Math.random() * arr.length)];
-  return element; 
+  return element;
 }
 
 // Function to generate password with user input
 function generatePassword() {
   getPasswordOptions()
-  
+
   let password = "";
 
   while (password.length <= characters) {
-    
+
     if (lowercasechar == true) {
       password += getRandom(lowerCasedCharacters);
     }
